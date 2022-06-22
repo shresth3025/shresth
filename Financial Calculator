@@ -1,0 +1,85 @@
+//Simple interest calculator+ compound interest calculator + EMI calculator 
+
+//Simple interest:
+#include <stdio.h>
+
+int main()
+{
+    float principle, time, rate, SI;
+
+    /* Input principle, rate and time */
+    printf("Enter principle (amount): ");
+    scanf("%f", &principle);
+
+    printf("Enter time: ");
+    scanf("%f", &time);
+
+    printf("Enter rate: ");
+    scanf("%f", &rate);
+
+    /* Calculate simple interest */
+    SI = (principle * time * rate) / 100;
+
+    /* Print the resultant value of SI */
+    printf("Simple Interest = %f", SI);
+
+    return 0;
+}
+
+//Compound Interest:
+
+#include <stdio.h>
+#include <math.h>
+
+int main()
+{
+    float principle, rate, time, CI;
+
+    /* Input principle, time and rate */
+    printf("Enter principle (amount): ");
+    scanf("%f", &principle);
+
+    printf("Enter time: ");
+    scanf("%f", &time);
+
+    printf("Enter rate: ");
+    scanf("%f", &rate);
+
+    /* Calculate compound interest */
+    CI = principle* (pow((1 + rate / 100), time));
+
+    /* Print the resultant CI */
+    printf("Compound Interest = %f", CI);
+
+    return 0;
+}
+
+// EMI calculator:
+
+#include<stdio.h>
+#include<math.h>
+
+
+int main()
+{
+ float p, R, r, emi;
+ int n;
+
+ /* Reading inputs */
+ printf("Enter principal amount: ");
+ scanf("%f", &p);
+ printf("Enter annual interest rate: ");
+ scanf("%f", &R);
+ printf("Enter number of months: ");
+ scanf("%d", &n);
+
+ /* Calculating interest rate per month */
+ r = R/(12*100);
+
+ /* Calculating equated monthly intsallment (EMI) */
+ emi = p * r * pow(1+r,n)/(pow(1+r,n)-1);
+
+ printf("Monthly EMI: %f", emi);
+
+ return 0;
+}
